@@ -9,4 +9,4 @@
 ## Run
 1. Start XAMPP
 2. Put folder in htdocs
-3. Open http://localhost/portfolio/
+
