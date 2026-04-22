@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hilme | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+<div class="cursor"></div>
+
+<!-- NAV -->
+<nav>
+    <h2 class="logo">Hilme ✨</h2>
+    <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <img src="profile.jpg" class="profile">
+
+    <h1 class="glow">Hi, I’m Hilme 💜</h1>
+    <h2 class="typing"></h2>
+
+    <p>Soft energy, strong mind — creating beautiful digital experiences</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <h2 class="glow">About Me</h2>
+    <p>
+        I’m a Software Engineering student who blends creativity with technology.
+        I love building aesthetic interfaces and meaningful digital experiences.
+    </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+    <h2 class="glow">Projects ✨</h2>
+
+    <div class="cards">
+
+        <a href="#" class="card">
+            <h3>Registration System</h3>
+            <p>PHP + SQL + Sessions</p>
+
+        </a>
+
+        <div class="card">
+            <h3>Portfolio</h3>
+            <p>Creative animated UI</p>
+            <h3><a href="https://github.com/willow-12/chat_app">Chat-App</a></h3>
+        </div>
+
+        <div class="card">
+            <h3> <a href="https://github.com/AdvancedProgramming3/anonymous-confession-wall">Annonymous Confession Wall</a></h3>
+            <p>Frontend + Backend </p>
+
+    </div>
+    <div class="card2">
+        <h3><a href ="https://github.com/willow-12/Minidashboard">Mini-Dashboard</a></h3>
+        <p>Html+Css+Js </p>
+        
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h2 class="glow">Contact Me</h2>
+
+    <form action="contact.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <?php
+    session_start();
+    if(isset($_SESSION['msg'])){
+        echo "<p class='msg'>" . $_SESSION['msg'] . "</p>";
+        unset($_SESSION['msg']);
+    }
+    ?>
+</section>
+
+<footer>
+    <p>© 2026 Hilme</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
